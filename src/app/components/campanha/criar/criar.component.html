@@ -1,0 +1,38 @@
+<form [formGroup]="formulario">
+    <mat-form-field class="example-full-width">
+        <mat-label>Campanha</mat-label>
+        <input matInput placeholder="Digite nome da campanha" formControlName="nome">
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="example-full-width">
+        <mat-label>Descrição</mat-label>
+        <input matInput placeholder="Digite descrição da campanha" formControlName="descricao">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Data ínicio</mat-label>
+        <input matInput [matDatepicker]="dataInicio">
+        <mat-datepicker-toggle matIconSuffix [for]="dataInicio"></mat-datepicker-toggle>
+        <mat-datepicker #dataInicio></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <mat-label>Data fim</mat-label>
+        <input matInput [matDatepicker]="dataFim">
+        <mat-datepicker-toggle matIconSuffix [for]="dataFim"></mat-datepicker-toggle>
+        <mat-datepicker #dataFim></mat-datepicker>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+        <input matInput type="number" placeholder="Quantidade de rifas">
+    </mat-form-field>
+    <br>
+
+    <button mat-flat-button color="primary" (click)="cadastrar()">CRIAR CAMPANHA</button>
+</form>
