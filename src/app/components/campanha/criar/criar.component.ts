@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { CampanhaRequest } from 'src/app/model/request/campanha-request';
 import { CampanhaService } from 'src/app/service/campanha.service';
 
@@ -10,7 +11,7 @@ import { CampanhaService } from 'src/app/service/campanha.service';
 })
 export class CriarComponent {
 
-  constructor(private formBuilder: FormBuilder, private service: CampanhaService) {
+  constructor(private formBuilder: FormBuilder, private service: CampanhaService, private notificacao: ToastrService) {
   }
 
   formulario: FormGroup = this.formBuilder.group({
@@ -24,9 +25,9 @@ export class CriarComponent {
   cadastrar() {
     this.service.cadastrar(this.criarCampanha()).subscribe({
       next: () => {
-
-      }, error: () => {
-
+        this.notificacao.success('Campanha cadastrada com sucesso!')
+      }, error: (e) => {
+        console.log(e)
       }
     })
   }

@@ -11,6 +11,7 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut: 6000,
+      closeButton: true,
+      progressBar: true
+    }),
     ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
