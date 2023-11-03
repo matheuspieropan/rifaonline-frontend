@@ -13,7 +13,7 @@
 
     <mat-form-field>
         <mat-label>Data ínicio</mat-label>
-        <input matInput [matDatepicker]="dataInicio">
+        <input matInput [matDatepicker]="dataInicio" formControlName="dataInicio">
         <mat-datepicker-toggle matIconSuffix [for]="dataInicio"></mat-datepicker-toggle>
         <mat-datepicker #dataInicio></mat-datepicker>
     </mat-form-field>
@@ -22,7 +22,7 @@
 
     <mat-form-field>
         <mat-label>Data fim</mat-label>
-        <input matInput [matDatepicker]="dataFim">
+        <input matInput [matDatepicker]="dataFim" formControlName="dataFim">
         <mat-datepicker-toggle matIconSuffix [for]="dataFim"></mat-datepicker-toggle>
         <mat-datepicker #dataFim></mat-datepicker>
     </mat-form-field>
@@ -30,7 +30,7 @@
     <br>
 
     <mat-form-field>
-        <input matInput type="number" placeholder="Quantidade de rifas">
+        <input matInput type="number" placeholder="Quantidade de rifas" formControlName="quantidadeRifas">
     </mat-form-field>
     <br>
 
